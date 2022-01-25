@@ -1,0 +1,2 @@
+breakpoint set --line 65 -C 'frame variable'
+process launch -i test

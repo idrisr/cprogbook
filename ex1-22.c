@@ -63,5 +63,10 @@ int main(int argc, char *argv[]) {
         }
     }
 
+    for (int i=0; i<index; i++) {
+        putchar(buffer[i]);
+    }
+
+
     return 0;
 }
