@@ -2,17 +2,23 @@
 #include <stdlib.h>
 #include <assert.h>
 
-#define MAXLINE 200
-#define COL 5
+#define MAXCOL 100
 
 int main(int argc, char *argv[]) {
+    if (argc != 2) {
+        printf("supply col length\n");
+        exit(1);
+    }
+
+    int col=atoi(argv[1]);
+
     int c=0;
     int index=0;
     int last_space=-1;
-    char buffer[COL];
+    char buffer[MAXCOL];
 
     while ((c=getchar()) != EOF) {
-        if (index<COL) {
+        if (index<col) {
             if (c=='\n') {
                 buffer[index]=c;
                 index++;
@@ -51,7 +57,7 @@ int main(int argc, char *argv[]) {
                     putchar(buffer[i]);
                 }
                 index=0;
-                for (int i=last_space; i<COL; i++) {
+                for (int i=last_space; i<col; i++) {
                     buffer[i-last_space]=buffer[i];
                     index++;
                 }
